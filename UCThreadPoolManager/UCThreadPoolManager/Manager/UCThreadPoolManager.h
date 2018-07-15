@@ -14,7 +14,13 @@
 + (instancetype)sharedInstance;
 + (BOOL)releaseManager;
 
-- (dispatch_queue_t)getQueueWithCPUCore;
-- (dispatch_queue_t)getQueueWithCount:(NSInteger)count;
+- (BOOL)createGCDQueuePoolWithCPUCore;
+- (BOOL)createGCDQueuePoolWithCount:(NSInteger)count;
+- (dispatch_queue_t)getIdleGCDQueue;
+
+- (BOOL)createNSOperationQueuePoolWithCPUCore;
+- (BOOL)createNSOperationQueuePoolWithCount:(NSInteger)count;
+- (NSOperationQueue *)getIdleNSOperationQueue;
+
 
 @end
